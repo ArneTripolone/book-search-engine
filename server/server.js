@@ -20,6 +20,16 @@ server.applyMiddleware({ app });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphql: true
+  })
+);
+
+app.use(express.static('public'));
+
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
