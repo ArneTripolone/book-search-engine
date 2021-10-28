@@ -20,13 +20,13 @@ server.applyMiddleware({ app });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(
-  '/graphql',
-  graphqlHTTP({
-    schema,
-    graphql: true
-  })
-);
+//app.use(
+//  '/graphql',
+//  graphqlHTTP({
+//    schema,
+//    graphql: true
+//  })
+//);
 
 app.use(express.static('public'));
 
