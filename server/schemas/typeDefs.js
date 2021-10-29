@@ -1,3 +1,4 @@
+// import the gql tagged template function
 const {gql} =require('apollo-server-express');
 
 const typeDefs = gql`
@@ -9,6 +10,7 @@ const typeDefs = gql`
         image: String
         link: String
     }
+
     type User{
         _id: ID
         username: String
